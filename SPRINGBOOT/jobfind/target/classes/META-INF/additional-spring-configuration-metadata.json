@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "jpa.hibernate.ddl-auto",
+    "type": "java.lang.String",
+    "description": "A description for 'jpa.hibernate.ddl-auto'"
+  },
+  {
+    "name": "jpa.properties.properties.hibernate",
+    "type": "java.lang.String",
+    "description": "A description for 'jpa.properties.properties.hibernate'"
+  },
+  {
+    "name": "jpa.properties.properties.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'jpa.properties.properties.dialect'"
+  },
+  {
+    "name": "jpa.properties.properties.format_sql",
+    "type": "java.lang.String",
+    "description": "A description for 'jpa.properties.properties.format_sql'"
+  },
+  {
+    "name": "jpa.properties.show-sql",
+    "type": "java.lang.String",
+    "description": "A description for 'jpa.properties.show-sql'"
+  }
+]}
