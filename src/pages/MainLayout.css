@@ -1,0 +1,378 @@
+/* Main Layout Styles */
+.main-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Content Area - 80% */
+.content-area {
+  margin-left: 250px; /* Updated to match sidebar width */
+  width: calc(100% - 250px); /* Updated to match sidebar width */
+  display: flex;
+}
+
+/* Feed Section - 50% of Content Area (40% of total) */
+.feed-section {
+  width: 62.5%;
+  padding: 20px;
+  border-right: 1px solid #dbdbdb;
+}
+
+.feed-section h2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+}
+
+.post {
+  margin-bottom: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #efefef;
+}
+
+.profile-picture-small {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: 600;
+  color: #262626;
+  text-decoration: none;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.post-media {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.post-content p {
+  padding: 12px;
+}
+
+.post-actions {
+  display: flex;
+  padding: 8px 12px;
+  border-top: 1px solid #efefef;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #262626;
+}
+
+.action-button:hover {
+  color: #8e8e8e;
+}
+
+/* Profile Section - 30% of Content Area (30% of total) */
+.profile-section {
+  width: 37.5%;
+  padding: 20px;
+}
+
+.profile-widget {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.profile-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.username-large {
+  font-weight: 600;
+  font-size: 16px;
+  color: #262626;
+  text-decoration: none;
+}
+
+.suggestions h3 {
+  font-size: 14px;
+  color: #8e8e8e;
+  margin-bottom: 15px;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.follow-button {
+  margin-left: auto;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.follow-button:hover {
+  background-color: #1877f2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content-area {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    flex-direction: column;
+  }
+  
+  .feed-section, .profile-section {
+    width: 100%;
+  }
+  
+  .profile-section {
+    order: -1;
+  }
+}
+/* Profile Section Styling */
+.profile-section {
+  width: 40%;  
+  
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Suggestions Container */
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual Suggestion Item */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Profile Link and Image */
+.profile-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-small {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Suggestion Info */
+.suggestion-info {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 3px;
+}
+
+.username:hover {
+  text-decoration: underline;
+}
+
+.suggestion-type {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Follow Button */
+.follow-button {
+  padding: 6px 12px;
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.follow-button:hover {
+  background-color: #0077cc;
+}
+
+/* Profile Section */
+.profile-section {
+  width: 37.5%;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  display: flex;           /* NEW */
+  flex-direction: column;  /* NEW */
+  align-items: flex-start; /* NEW */
+}
+/* Suggestions Title */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8e8e8e;
+  margin-bottom: 15px;
+}
+
+/* Suggestions List */
+/* Profile Section Styling */
+
+
+/* Suggestions Container */
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Make suggestions take full width */
+}
+
+
+/* Individual Suggestion */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Profile link inside suggestion */
+.profile-link {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+/* Suggestion Info */
+.suggestion-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Username inside suggestion */
+.username {
+  font-weight: 600;
+  font-size: 14px;
+  color: #262626;
+  text-decoration: none;
+}
+
+.username:hover {
+  text-decoration: underline;
+}
+
+/* Suggestion Type */
+.suggestion-type {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+/* Follow Button */
+.follow-button {
+  padding: 5px 10px;
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.follow-button:hover {
+  background-color: #1877f2;
+}
+
+/* No Suggestions */
+.no-suggestions {
+  font-size: 13px;
+  color: #999999;
+  text-align: center;
+  margin-top: 20px;
+}
+.profile-picture-small {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}

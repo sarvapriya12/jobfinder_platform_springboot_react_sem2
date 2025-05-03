@@ -1,0 +1,642 @@
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  width: 100%;
+}
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #20232a;
+  color: white;
+}
+
+/* SEARCH BAR */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 8px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.search-input {
+  border: none;
+  margin-left: 5px;
+  outline: none;
+  width: 100%;
+}
+
+/* DASHBOARD MAIN */
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: calc(100vh - 60px);
+}
+
+/* LEFT CONTENT - JOB POSTS */
+.left-content {
+  background: #eee;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.job-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.job-card h3 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.job-location {
+  font-size: 14px;
+  color: #777;
+}
+
+/* APPLY BUTTON */
+.apply-button {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.apply-button:hover {
+  background: #0056b3;
+}
+
+/* RIGHT CONTENT - APPROVED JOBS */
+.right-content {
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+.approved-jobs-dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* APPLY MODAL */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* MODAL BUTTONS */
+.submit-application {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-modal {
+  background: #dc3545;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-application:hover {
+  background: #218838;
+}
+
+.close-modal:hover {
+  background: #c82333;
+}
+/* Form textarea styling */
+.modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* Loading state for buttons */
+.submit-application:disabled,
+.close-modal:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Modal footer spacing */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Form styling */
+.modal form {
+  margin-top: 15px;
+}
+/* === GLOBAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* === DASHBOARD CONTAINER === */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* === HEADER === */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #20232a;
+  color: white;
+  padding: 15px 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #3a3b3c;
+  padding: 8px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  color: white;
+  margin-left: 5px;
+  outline: none;
+  width: 100%;
+}
+
+/* === MAIN DASHBOARD === */
+.dashboard-main {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* === LEFT CONTENT - JOB LISTINGS === */
+.left-content {
+  width: 70%;
+  padding: 20px;
+  background: #e5e2e2;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.job-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.job-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.company-name, .job-location, .tech-stack {
+  font-size: 14px;
+  color: #666;
+}
+
+/* === RIGHT CONTENT - APPROVED JOBS === */
+.right-content {
+  width: 30%;
+  background: #18191a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.approved-jobs-dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: #242526;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* === APPLY BUTTON === */
+.apply-button {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.apply-button:hover {
+  background: #0056b3;
+}
+
+/* === MODAL OVERLAY === */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* === MODAL CONTENT === */
+.modal {
+  color: #18191a;
+  background: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* === MODAL BUTTONS === */
+.submit-application, .close-modal {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-application {
+  background: #28a745;
+  color: white;
+}
+
+.close-modal {
+  background: #dc3545;
+  color: white;
+}
+
+.submit-application:hover {
+  background: #218838;
+}
+
+.close-modal:hover {
+  background: #c82333;
+}
+
+/* === FORM FOOTER === */
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* === DISABLED BUTTONS === */
+.submit-application:disabled,
+.close-modal:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+/* === Side Drawer === */
+.dashboard-drawer {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #18191a;
+  color: white;
+  transition: left 0.3s;
+  z-index: 1000;
+}
+
+.dashboard-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #3a3b3c;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.drawer-nav {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+}
+
+.drawer-link:hover {
+  background: #3a3b3c;
+}
+
+/* Add these styles to make the profile image round and fix the dropdown */
+
+/* Profile Section Styles */
+.profile-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* This makes the image round */
+  object-fit: cover; /* This ensures the image covers the area without distortion */
+  border: 2px solid #ffffff; /* Optional: adds a white border around the image */
+}
+
+.profile-name {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+  color: #333;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.dropdown-item svg {
+  margin-right: 10px;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-item.logout {
+  border-top: 1px solid #eee;
+  color: #dc3545;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-item.logout:hover {
+  background: #ffeeee;
+}
+
+/* Backdrop for closing the dropdown when clicking outside */
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+/* Header Profile Section Styles - with high specificity selectors */
+.dashboard-header .profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  position: relative;
+  width: auto; /* Override the width from other styles */
+  background-color: transparent; /* Override background color */
+  padding: 0; /* Remove padding */
+  border-radius: 0; /* Remove border radius */
+  box-shadow: none; /* Remove box shadow */
+  flex-direction: row; /* Ensure horizontal layout */
+}
+
+/* Target the profile photo specifically in the header */
+.dashboard-header .profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important; /* Force it to be round with !important */
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Profile name in header */
+.dashboard-header .profile-name {
+  margin-left: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+/* Profile Dropdown Styles - with increased specificity */
+.dashboard-header .profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+  color: #333;
+}
+
+/* Style dropdown items */
+.dashboard-header .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.dashboard-header .dropdown-item svg {
+  margin-right: 10px;
+}
+
+.dashboard-header .dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* Style logout button specifically */
+.dashboard-header .dropdown-item.logout {
+  border-top: 1px solid #eee;
+  color: #dc3545;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 15px;
+}
+
+.dashboard-header .dropdown-item.logout:hover {
+  background: #ffeeee;
+}
+
+/* Backdrop for closing the dropdown when clicking outside */
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}

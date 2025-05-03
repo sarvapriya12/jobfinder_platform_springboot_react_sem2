@@ -1,0 +1,142 @@
+/* Full-page container */
+.login-container-unique {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./src/assets/jobls.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Login form */
+.login-form-unique {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 248, 255, 0.25);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);   
+    width: 350px;
+    height: 460px;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(1.1) contrast(0.95);
+    backdrop-filter: blur(12px);
+}
+
+/* Input fields */
+.login-input-unique {
+    margin-bottom: 1.2rem;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+    color: white;
+}
+
+.login-input-unique::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.login-input-unique:focus {
+    border-bottom: 2px solid #007bff;
+}
+
+/* Login button */
+.login-button-unique {
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 280px;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-button-unique:hover {
+    background: #a3df91;
+}
+
+.login-button-unique:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Remember me & Forgot password */
+.login-options-unique {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.remember-me-unique {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember-me-unique input {
+    transform: scale(1.1);
+    accent-color: #007bff;
+}
+
+.forgot-password-unique {
+    color: #d3deeb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password-unique:hover {
+    text-decoration: underline;
+}
+
+/* Sign-up link */
+.signup-link-unique {
+    color: #d6e1ed;
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.signup-link-unique a {
+    color: #d6e1ed;
+    text-decoration: none;
+}
+
+.signup-link-unique a:hover {
+    color: #1270cf;
+    text-decoration: underline;
+}
+
+/* Fix checkbox alignment */
+.remember-me-unique {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .login-form-unique {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .login-button-unique {
+        width: 100%;
+    }
+}

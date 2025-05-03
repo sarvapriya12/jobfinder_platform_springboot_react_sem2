@@ -1,0 +1,554 @@
+/* === Dashboard Container === */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* === Header === */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #242526;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.drawer-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #3a3b3c;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.search-icon {
+  margin-right: 5px;
+  color: #b0b3b8;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+/* === Profile Section === */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-photo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.logout {
+  color: red;
+}
+
+/* === Side Drawer === */
+.dashboard-drawer {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #18191a;
+  color: white;
+  transition: left 0.3s;
+}
+
+.dashboard-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #3a3b3c;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.drawer-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+}
+
+.drawer-link:hover {
+  background: #3a3b3c;
+}
+
+/* === New Post Modal === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  color: #18191a;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-button {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background: #c9302c;
+}
+
+.submit-button:hover {
+  background: #218838;
+}
+
+/* === Main Content === */
+.dashboard-main {
+  display: flex;
+  padding: 5px;
+  height: calc(100vh - 60px);
+}
+
+/* === Job Listings === */
+.left-content {
+  width: 70%;
+  padding-right: 20px;
+  background: #e5e2e2;
+  color: #18191a;
+  border-radius: 10px;
+}
+
+.job-cards-container {  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.job-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #555;
+}
+
+.job-location {
+  font-size: 14px;
+  color: #777;
+}
+
+.tech-stack {
+  font-size: 14px;
+  color: #444;
+  margin-top: 5px;
+}
+
+/* === Applications Dropdown === */
+.applications-dropdown {
+  width: 30%;
+  background: #18191a;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.dropdown-toggle {
+  background: #242526;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applications-list {
+  list-style: none;
+  padding: 10px;
+  margin-top: 10px;
+  background: #242526;
+  border-radius: 5px;
+}
+
+.application-item {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-resume {
+  text-decoration: none;
+  color: #4caf50;
+  font-size: 14px;
+}
+
+.download-resume:hover {
+  color: #388e3c;
+}
+
+/* === Resume Actions === */
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.view-resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #4267B2;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.view-resume-btn:hover {
+  background: #365899;
+}
+
+/* === Resume Modal === */
+.resume-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.resume-modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 80%;
+  height: 80%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.resume-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.resume-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #18191a;
+}
+
+.resume-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+.resume-modal-close:hover {
+  color: #000;
+}
+
+.resume-iframe-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Make applications list scrollable without visible scrollbar */
+.applications-list {
+    max-height: 300px; /* Restrict height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+    padding: 5px;
+}
+
+/* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+.applications-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Keep emails from breaking layout */
+.application-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Spacing between text and buttons */
+    padding: 8px;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." for long emails */
+    max-width: 100%;
+}
+
+/* Ensure text truncates properly */
+.application-item span {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Keep View & Download buttons aligned */
+.resume-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.view-resume-btn, .download-resume {
+    white-space: nowrap; /* Prevent shrinking */
+}
+
+/* === Applications Dropdown === */
+.applications-dropdown {
+  width: 30%;
+  background: #18191a;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  max-height: calc(100vh - 100px); /* Allow it to fill available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-toggle {
+  background: #242526;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applications-list {
+  list-style: none;
+  padding: 10px;
+  margin-top: 10px;
+  background: #242526;
+  border-radius: 5px;
+  max-height: calc(100vh - 180px); /* Increased height to show more applications */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Show a thin scrollbar in Firefox */
+  -ms-overflow-style: thin; /* Show thin scrollbar in IE/Edge */
+}
+
+/* Show a minimal scrollbar in WebKit browsers (Chrome, Safari) */
+.applications-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.applications-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+.applications-list::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.application-item {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  margin-bottom: 5px;
+}
+
+/* Last item shouldn't have a border */
+.application-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Ensure text truncates properly */
+.application-item span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Keep View & Download buttons aligned */
+.resume-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.view-resume-btn, .download-resume {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+} 
+/* Add these CSS rules to your RecruiterDashboard.css file */
+.applications-wrapper {
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  background: #242526;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.applications-list {
+  max-height: none !important; /* Override any previous height limitation */
+  overflow-y: visible !important; /* Let the parent handle scrolling */
+  padding: 5px;
+}
+
+/* Show a scrollbar */
+.applications-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.applications-wrapper::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+.applications-wrapper::-webkit-scrollbar-track {
+  background: #333;
+}
